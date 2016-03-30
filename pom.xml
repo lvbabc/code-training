@@ -16,6 +16,7 @@
 	</parent>
 
 	<modules>
+	<module>springmvc-mybatis-jetty</module>
 	</modules>
 
 	<build>
