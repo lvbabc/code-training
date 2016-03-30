@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>code-memo-lvb</groupId>
+	<artifactId>code-lvb</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<url>https://github.com/lvbabc/code-memo-lvb</url>
+	<name>Code Memo</name>
+	<description>记录练习的代码以及作为备忘录</description>
+
+	<parent>
+		<groupId>zx.soft</groupId>
+		<artifactId>common-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<modules>
+	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.4</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<developers>
+		<developer>
+			<id>lvbabc</id>
+			<name>lvbabc</name>
+			<email>binglvabc@163.com</email>
+			<url>https://github.com/lvbabc</url>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache Licence,Version2.0</name>
+			<url>http://www.apache.org/licenes/LICENSE-2.0</url>
+		</license>
+	</licenses>
+</project>
