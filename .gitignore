@@ -1,6 +1,6 @@
 .classpath
 .project
-.settings/
+.settings
 
 *.iml
 .idea/
@@ -9,5 +9,4 @@
 target/
 logs/
 
-# added by donglei
 /**/*.csv
