@@ -1,4 +1,4 @@
-package kafka.producer;
+package zx.lvb.kafka.producer;
 
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;

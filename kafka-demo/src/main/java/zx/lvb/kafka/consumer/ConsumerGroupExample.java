@@ -1,4 +1,4 @@
-package kafka.consumer;
+package zx.lvb.kafka.consumer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,22 +8,23 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import kafka.consumer.Consumer;
 import kafka.consumer.ConsumerConfig;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ConsumerGroupExample {
 	private static Logger logger = LoggerFactory.getLogger(ConsumerGroupExample.class);
 	private final ConsumerConnector consumer;
 	private final String topic;
 	private ExecutorService executor;
-	private AtomicLong count;
+	private final AtomicLong count;
 
 	public ConsumerGroupExample(String a_zookeeper, String a_groupId, String a_topic) {
-		consumer = kafka.consumer.Consumer.createJavaConsumerConnector(createConsumerConfig(a_zookeeper, a_groupId));
+		consumer = Consumer.createJavaConsumerConnector(createConsumerConfig(a_zookeeper, a_groupId));
 		this.topic = a_topic;
 		this.count = new AtomicLong();
 	}
@@ -77,9 +78,9 @@ public class ConsumerGroupExample {
 	}
 
 	public static void main(String[] args) {
-		String zooKeeper = "192.168.5.201:2124,192.168.3.10:2124,192.168.3.11:2124";
+		String zooKeeper = "192.168.6.156:2181";
 		String groupId = "sentiment";
-		String topic = "test";
+		String topic = "test2";
 		int threads = Integer.parseInt("1");
 
 		ConsumerGroupExample example = new ConsumerGroupExample(zooKeeper, groupId, topic);

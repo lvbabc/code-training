@@ -1,4 +1,4 @@
-package kafka.producer;
+package zx.lvb.kafka.producer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +29,7 @@ public class ProducerTest {
 		InputStream propFile = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream("kafkaproducer.properties");
 
-		String topic = "test";
+		String topic = "test2";
 		prop.load(propFile);
 		System.out.println("Property: " + prop.toString());
 		StringBuilder builder = new StringBuilder(1024);

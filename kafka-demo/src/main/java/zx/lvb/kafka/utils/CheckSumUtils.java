@@ -1,4 +1,4 @@
-package kafka.utils;
+package zx.lvb.kafka.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

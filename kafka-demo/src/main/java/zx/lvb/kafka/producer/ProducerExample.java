@@ -1,36 +1,23 @@
-package kafka.producer;
-import java.util.Properties;
+package zx.lvb.kafka.producer;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import kafka.utils.CheckSumUtils;
+import zx.lvb.kafka.utils.CheckSumUtils;
+import zx.lvb.kafka.utils.KafkaConfig;
 
 public class ProducerExample {
 	private static Logger logger = LoggerFactory.getLogger(ProducerExample.class);
 
 	public static void main(String args[]) throws InterruptedException, ExecutionException {
-		Properties props = new Properties();
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.6.156:9092");
 
-		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-
-		props.put(ProducerConfig.TIMEOUT_CONFIG, "50000");
-
-		props.put(ProducerConfig.ACKS_CONFIG, "1");
-
-		//		props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
-
-		KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
+		KafkaProducer<String, String> producer = KafkaConfig.getProducer();
 		long start = System.currentTimeMillis();
 		boolean sync = false;
-		String topic = "test";
+		String topic = "test2";
 		int i = 100000;
 		for (; i < 200000; i++) {
 			if (i % 100 == 0) {

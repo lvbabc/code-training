@@ -1,4 +1,4 @@
-package kafka.consumer;
+package zx.lvb.kafka.consumer;
 
 import java.util.concurrent.atomic.AtomicLong;
 
