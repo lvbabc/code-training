@@ -19,6 +19,7 @@
 	<modules>
 	<module>springmvc-mybatis-jetty</module>
 	<module>kafka-demo</module>
+	<module>java-practice</module>
 	</modules>
 
 	<build>
