@@ -11,8 +11,6 @@ public class FilterStr {
 	 * @Title : filterNumber
 	 * @Type : FilterStr
 	 * @Description : 过滤出数字
-	 * @param str
-	 * @return
 	 */
 	public static String filterNumber(String number) {
 		number = number.replaceAll("[^(0-9)]", "");
@@ -24,8 +22,6 @@ public class FilterStr {
 	 * @Title : filterAlphabet
 	 * @Type : FilterStr
 	 * @Description : 过滤出字母
-	 * @param alph
-	 * @return
 	 */
 	public static String filterAlphabet(String alph) {
 		alph = alph.replaceAll("[^(A-Za-z)]", "");
@@ -37,8 +33,6 @@ public class FilterStr {
 	 * @Title : filterChinese
 	 * @Type : FilterStr
 	 * @Description : 过滤出中文
-	 * @param chin
-	 * @return
 	 */
 	public static String filterChinese(String chin) {
 		chin = chin.replaceAll("[^(\\u4e00-\\u9fa5)]", "");
@@ -50,8 +44,6 @@ public class FilterStr {
 	 * @Title : filter
 	 * @Type : FilterStr
 	 * @Description : 过滤出字母、数字和中文
-	 * @param character
-	 * @return
 	 */
 	public static String filter(String character) {
 		character = character.replaceAll("[^(a-zA-Z0-9\\u4e00-\\u9fa5)]", "");
