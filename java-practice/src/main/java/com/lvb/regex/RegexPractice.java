@@ -12,24 +12,10 @@ public class RegexPractice {
 	public static void main(String[] args) {
 
 		RegexPractice practice = new RegexPractice();
-		//		practice.findNum();
+		practice.findNum();
 		//		practice.findWords();
 		//		practice.replacePractice();
 		practice.reset();
-
-		//		if (args.length < 2) {
-		//			System.out.println("Usage:/n" + "java TestRegularExpression " + "characterSequence regularExpression+");
-		//			System.exit(0);
-		//		}
-		//		System.out.println("Input: \"" + args[0] + "\"");
-		//		for (int i = 1; i < args.length; i++) {
-		//			System.out.println("Regular expression: \"" + args[i] + "\"");
-		//			Pattern p = Pattern.compile(args[i]);
-		//			Matcher m = p.matcher(args[0]);
-		//			while (m.find()) {
-		//				System.out.println("Match \"" + m.group() + "\" at positions " + m.start() + "-" + (m.end() - 1));
-		//			}
-		//		}
 
 		Pattern pattern = Pattern.compile("[ab]{2}");
 		Matcher matcher = pattern.matcher("abcdabefabghabijk");
@@ -47,18 +33,19 @@ public class RegexPractice {
 	 */
 	private void findNum() {
 		BufferedReader in;
+		String s = "(212) 555-1212 212-555-1212 212 555 1212";
 		File file = new File("src/main/resources/phonenum.txt");
 		Pattern pattern = Pattern.compile("\\(\\d{3}\\)\\s\\d{3}-\\d{4}");
-		Pattern pattern2 = Pattern.compile("(\\(\\d{3}\\)|\\d{3})\\s?(-|)?\\d{3}\\s?(-|)?\\d{4}");
+		Pattern pattern2 = Pattern.compile("(\\(\\d{3}\\)|\\d{3})(-| )?\\d{3}(-| )?\\d{4}");
 		try {
 			in = new BufferedReader(new FileReader(file));
-			String s;
-			while ((s = in.readLine()) != null) {
-				Matcher matcher = pattern2.matcher(s);
-				if (matcher.find()) {
-					System.out.println(matcher.group());
-				}
+			//			String s;
+			//			while ((s = in.readLine()) != null) {
+			Matcher matcher = pattern2.matcher(s);
+			while (matcher.find()) {
+				System.out.println(matcher.group());
 			}
+			//			}
 			in.close();
 		} catch (Exception e) {
 
