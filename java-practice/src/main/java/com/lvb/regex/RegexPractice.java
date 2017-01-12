@@ -17,15 +17,16 @@ public class RegexPractice {
 		//		practice.replacePractice();
 		practice.reset();
 
-		Pattern pattern = Pattern.compile("[ab]{2}");
-		Matcher matcher = pattern.matcher("abcdabefabghabijk");
-		StringBuffer sBuffer = new StringBuffer();
-		while (matcher.find()) {
-			matcher.appendReplacement(sBuffer, "哈哈");
-
-			System.out.println(sBuffer);
+		Pattern pattern = Pattern.compile(".*");
+		Matcher matcher = pattern.matcher("幽默大王");
+		System.out.println(matcher.groupCount());
+		while (matcher.find()){
+			System.out.println(matcher.group());
 		}
-		matcher.appendTail(sBuffer);
+
+		"幽默大王".replaceAll(".*", "\"" + "$0" + "\"");
+		System.out.println("幽默大王".replaceAll(".*", "\"" + "$0" + "\""));
+
 	}
 
 	/**

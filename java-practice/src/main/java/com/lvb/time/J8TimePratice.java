@@ -15,7 +15,7 @@ public class J8TimePratice {
 	public static void main(String args[]) {
 		J8TimePratice timePratice = new J8TimePratice();
 		//		timePratice.clockPractice();
-		//		timePratice.localPractice();
+		timePratice.localPractice();
 		timePratice.durationPractice();
 	}
 
@@ -56,7 +56,7 @@ public class J8TimePratice {
 		final LocalDateTime datetime = LocalDateTime.now();
 		final LocalDateTime datetimeFromClock = LocalDateTime.now(clock);
 
-		System.out.println(datetime);
+		System.out.println(datetime.toString());
 		System.out.println(datetimeFromClock);
 	}
 

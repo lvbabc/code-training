@@ -6,7 +6,21 @@ public class ThreadTest4 {
 	public static void main(String[] args) {
 
 		MyRunnable myRunnable = new MyRunnable();
-		Thread thread = new Thread(myRunnable);
+		Thread thread = new Thread(new Runnable() {
+
+			private boolean stop;
+
+			@Override
+			public void run() {
+				for (int i = 0; i < 100 && !stop; i++) {
+					System.out.println(Thread.currentThread().getName() + " " + i);
+				}
+			}
+
+			public void stopThread() {
+				this.stop = true;
+			}
+		});
 
 		for (int i = 0; i < 100; i++) {
 			System.out.println(Thread.currentThread().getName() + " " + i);
